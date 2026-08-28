@@ -55,7 +55,7 @@ int pop()
 
 //stack program in c using dynamic size array
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 
 int top=-1 , max , *arr;
@@ -115,4 +115,6 @@ int pop()
     top=top--;
     return de;
 }
+*/
+
 
