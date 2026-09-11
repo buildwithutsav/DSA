@@ -15,7 +15,7 @@ int main(){
 
     for(i = 0; i < SIZE; i++){
         scanf("%d", &queue[i]);
-        
+        rear++;
     }
 
     while(front <= rear){
