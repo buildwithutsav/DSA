@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node *next;
+};
+
+struct Node *head = NULL;
+
+void insertEnd(int value) {
+
+    struct Node *newNode =
+        (struct Node *)malloc(sizeof(struct Node));
+
+    newNode->data = value;
+    newNode->next = NULL;
+
+    if(head == NULL) {
+        head = newNode;
+        return;
+    }
+
+    struct Node *temp = head;
+
+    while(temp->next != NULL) {
+        temp = temp->next;
+    }
+
+    temp->next = newNode;
+}
+
+void findMaximum() {
+
+    if(head == NULL) {
+        printf("List is empty!\n");
+        return;
+    }
+
+    struct Node *temp = head;
+
+    int maximum = head->data;
+
+    while(temp != NULL) {
+
+        if(temp->data > maximum) {
+            maximum = temp->data;
+        }
+
+        temp = temp->next;
+    }
+
+    printf("Maximum = %d\n", maximum);
+}
+
+int main() {
+
+    insertEnd(10);
+    insertEnd(50);
+    insertEnd(20);
+    insertEnd(80);
+    insertEnd(30);
+
+    findMaximum();
+
+    return 0;
+}
